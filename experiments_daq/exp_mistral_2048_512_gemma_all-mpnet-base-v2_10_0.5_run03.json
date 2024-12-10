@@ -1,0 +1,356 @@
+{
+    "70": {
+        "question": "What are the general steps outlined for training a language model in the document, and how is the training data for the generator language model collected and utilized?",
+        "gold_answer_research": "The document outlines the general steps for training a language model, including incorporating retrieved documents into the main input sequence and optimizing the loss function to train the generator. The training data for the generator language model is collected through various techniques such as supervised fine-tuning, critic learning, and custom retrievers for downstream tasks. The collected data is used to train the generator on specific tasks like summarization, machine reading comprehension, and natural language to SQL translation, improving performance on those tasks.",
+        "gold_answer_marketing": "The general steps for training a language model include fine-tuning on specific datasets, filtering pretraining data, and using critic learning. Training data for the generator language model is collected from open-access NLP papers and used for downstream conditional text generation tasks.",
+        "research": {
+            "generated_answer": "The text outlines several steps for training a language model. These include:\n\n1. Preprocessing: Text is converted into numerical representations using techniques like tokenization and encoding.\n2. Building the Model: Architecture selection (like Recurrent Neural Networks or Transformers), defining the loss function, and setting up the optimization algorithm.\n3. Training: The model learns from input sequences (context) and corresponding output labels through backpropagation and gradient descent.\n4. Evaluating Performance: Metrics like perplexity and BLEU scores are used to assess the model's quality.\n\nAs for the generation language model data collection, it mentions no specifics. However, it's stated that the model is trained on large text corpora obtained mainly from web crawling and machine translations.",
+            "avg_chunk_score": 0.0,
+            "pairwise_score": 2,
+            "context_relevance_score": 3,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.25
+        },
+        "marketing": {
+            "generated_answer": "The text outlines three main steps for training a language model: (1) Preprocessing data by cleaning, tokenizing, and encoding it into numerical vectors; (2) Building the neural network architecture and setting up the optimization algorithm; (3) Training the model using large datasets and backpropagating errors. Data collection involves curation from various sources like web pages, books, and other texts. Utilization includes converting raw text into numerical representations for input into the model during training.",
+            "avg_chunk_score": 0.0,
+            "pairwise_score": 2,
+            "context_relevance_score": 3,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.5
+        }
+    },
+    "hyperparameters": {
+        "gen_model": "mistral",
+        "chunk_size": 2048,
+        "overlap_size": 512,
+        "judge_model": "gemma",
+        "embedding_model": "all-mpnet-base-v2",
+        "top_k": 10,
+        "min_score_threshold": 0.5
+    },
+    "34": {
+        "question": "What are some of the limitations of traditional position encoding methods in the architecture of pre-trained language models (PLMs), and what novel approach does the paper propose to address these issues?",
+        "gold_answer_research": "One limitation of traditional position encoding methods in PLMs is that they may not enable length extrapolation of pre-existing models, leading to the need for substantial pre-training costs. The paper proposes a novel approach called Position Interpolation, which extends existing PLMs without deviating far from existing definitions of position encoding or attention mechanisms. This method allows for much extended context windows for text modeling, leading to significant perplexity gains and improved model performance.",
+        "gold_answer_marketing": "Traditional position encoding methods in PLMs have limitations in enabling length extrapolation and adapting to extended context windows. The paper proposes a novel approach called Position Interpolation, which generates strong models that can effectively make use of much extended context windows. This method allows for substantial pre-training cost savings and preserves the quality of the original models, even for small context window tasks.",
+        "research": {
+            "generated_answer": "Some limitations of traditional position encoding methods in the architecture of pre-trained language models include the inflexibility of sequence length, the lack of decaying inter-token dependency with increasing relative distances, and the incompatibility with linear self-attention. The paper proposes a novel method called Rotary Position Embedding (RoPE), which addresses these issues. RoPE encodes absolute position with a rotation matrix and incorporates explicit relative position dependency in self-attention formulation, providing valuable properties such as sequence length flexibility, decaying inter-token dependency, and the capability of equipping linear self-attention with relative position encoding.",
+            "avg_chunk_score": 0.6502761510411907,
+            "pairwise_score": 3,
+            "context_relevance_score": 3,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 3.75
+        },
+        "marketing": {
+            "generated_answer": "Traditional position encoding methods in pre-trained language models (PLMs) have some limitations. They often rely heavily on absolute position information, which can negatively impact the model's performance when dealing with longer context windows. These methods are not flexible in terms of sequence length and do not decay well with increasing relative distances.\n\nTo overcome these challenges, the paper proposes a novel method named Rotary Position Embedding (RoPE). RoPE encodes the absolute position with a rotation matrix and simultaneously incorporates the explicit relative position dependency in self-attention formulation. This approach offers valuable properties such as sequence length flexibility, decaying inter-token dependency with increasing relative distances, and the capability of equipping the linear self-attention with relative position encoding.",
+            "avg_chunk_score": 0.6502761510411907,
+            "pairwise_score": 3,
+            "context_relevance_score": 3,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        }
+    },
+    "39": {
+        "question": "What are common research topics and themes found in recent publications about artificial intelligence and natural language processing?",
+        "gold_answer_research": "Recent publications in artificial intelligence and natural language processing have covered topics such as transformer models, feature learning in neural networks, attention mechanisms, multi-task benchmark platforms, semantic search using sentence embeddings, cross-task generalization, and question generation for question answering. Themes commonly explored include machine comprehension of text, reinforcement learning algorithms, sentence embeddings, semantic compositionality, reasoning with language models and knowledge graphs, and the gap between neural text and human text. These publications also delve into deep language understanding, retrieval-augmented transformers, image captioning, and open datasets for image-text pairs.",
+        "gold_answer_marketing": "Common research topics and themes in recent publications on artificial intelligence and natural language processing include transformer models, attention mechanisms, semantic search, sentence embeddings, and question answering using language models and knowledge graphs.",
+        "research": {
+            "generated_answer": "Based on the provided context, the common research topics and themes found in recent publications about artificial intelligence and natural language processing include but are not limited to:\n\n1. Text summarization and compression\n2. Transfer learning in NLP\n3. Question answering systems\n4. Pre-training of deep bidirectional transformers\n5. Controllable text-to-image generation\n6. Entity search\n7. Sentiment analysis\n8. Syntactic parsing\n9. Next token prediction\n10. Analogy detection\n11. Paraphrasing\n12. Long form question answering\n13. Retrieval-augmented generation\n14. Image captioning\n15. Reasoning and commonsense reasoning\n16. Multimodal understanding\n\nThese topics are mentioned in various studies published in reputed journals and conferences. Some examples of specific works in each area are referenced throughout the context.",
+            "avg_chunk_score": 0.5166806125980072,
+            "pairwise_score": 3,
+            "context_relevance_score": 3,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        },
+        "marketing": {
+            "generated_answer": "Based on the provided context, the common research topics and themes found in recent publications about artificial intelligence and natural language processing include:\n\n1. Text summarization and compression\n2. Sentiment analysis and emotion recognition\n3. Machine translation and multilingual processing\n4. Dialog systems and conversational agents\n5. Question answering and retrieval\n6. Dependency parsing and named entity recognition\n7. Machine learning techniques for NLP, including deep learning and transformers\n8. Transfer learning and fine-tuning for specific NLP tasks\n\nThese topics are reflected in various studies mentioned in the context, such as \"SQuAD: 100,000+ questions for machine comprehension,\" \"Bert: Pre-training of deep bidirectional transformers for language understanding,\" and \"Controllable text-to-image generation\" among others.",
+            "avg_chunk_score": 0.5166806125980072,
+            "pairwise_score": 3,
+            "context_relevance_score": 3,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        }
+    },
+    "30": {
+        "question": "What is the recommended strategy for training large autoregressive language models with limited compute resources, as contributed by the Chinchilla team?",
+        "gold_answer_research": "The Chinchilla team recommends that the number of training tokens should be doubled for every model size doubling to achieve better results on downstream tasks. They also suggest using larger, higher-quality training datasets to improve performance. Additionally, they mention the importance of balancing model size and efficiency to address computational costs and inference latency limitations. It is advised to focus on Transformer language models and consider sharing model parameters for quick task-switching when deploying as a service.",
+        "gold_answer_marketing": "The Chinchilla team recommends doubling the number of training tokens for every model size doubling and using larger, higher-quality training datasets to achieve better results on downstream tasks.",
+        "research": {
+            "generated_answer": "The Chinchilla team suggests a more parameter-efficient approach for training large autoregressive language models with limited compute resources. They encode the task-specific parameter increment by a much smaller set of parameters and optimize these parameters instead of the full set of parameters of the pre-trained model during fine-tuning. This reduces the number of trainable parameters significantly while maintaining comparable or even better model quality.",
+            "avg_chunk_score": 0.5978804861796012,
+            "pairwise_score": 3,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.25
+        },
+        "marketing": {
+            "generated_answer": "The Chinchilla team recommends encoding the task-specific parameter increment \u0394\u03a6 with a much smaller-sized set of parameters \u0398, allowing optimization over \u00de instead of updating all the parameters during fine-tuning. They suggest using a low-rank representation for an efficient implementation of this strategy.",
+            "avg_chunk_score": 0.5978804861796012,
+            "pairwise_score": 2,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.75
+        }
+    },
+    "35": {
+        "question": "How does the Rotary Position Embedding (RoPE) approach in Transformers differ from the traditional additive method of position embedding with respect to encoding position information?",
+        "gold_answer_research": "The RoPE approach in Transformers differs from the traditional additive method of position embedding by being multiplicative instead of additive. While traditional methods add position encoding to context representations, RoPE incorporates relative position information through rotation matrix product. This means that RoPE naturally includes relative position dependency in the self-attention formulation, without altering terms in the expanded formulation like the additive method does. Additionally, RoPE's properties show that it decays as the relative distance between positions increases, providing a clear theoretical interpretation of how position information is encoded.",
+        "gold_answer_marketing": "The RoPE approach in Transformers differs from the traditional additive method of position embedding by incorporating relative position information through rotation matrix product instead of altering terms in the expanded formulation of additive position encoding.",
+        "research": {
+            "generated_answer": "The main difference lies in how RoPE and traditional additive methods handle position information. In the case of RoPE, the position information is incorporated into the embeddings by multiplying them with sinusoidal functions, while in the traditional additive method, position information is directly added to the context representations via learnable vectors or sinusoids. By doing so, RoPE ensures that the attention mechanism remains only dependent on the relative positions of input elements, making it computationally efficient and theoretically sound.",
+            "avg_chunk_score": 0.5766059779742237,
+            "pairwise_score": 4,
+            "context_relevance_score": 3,
+            "failthfulness_score": 3,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 3.75
+        },
+        "marketing": {
+            "generated_answer": "The main difference lies in how RoPE and traditional additive methods encode position information. In RoPE, position information is incorporated relative to other positions via multiplication with sinusoidal functions, while in traditional additive methods, position information is added directly to the context representation as trainable vectors or generated using sinusoidal functions. RoPE's approach allows the model to capture the relationship between positions, providing a more nuanced understanding of position dependencies compared to the direct addition of position information.",
+            "avg_chunk_score": 0.5766059779742237,
+            "pairwise_score": 4,
+            "context_relevance_score": 3,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        }
+    },
+    "101": {
+        "question": "Can the use of attention mechanisms in deep learning models be applied to both machine translation and computer vision?",
+        "gold_answer_research": "Yes, attention mechanisms in deep learning models have shown success in both machine translation and computer vision tasks. In machine translation, attention allows the model to capture dependencies between source and target sequences regardless of distance, leading to improved translation quality. Similarly, in computer vision, attention mechanisms have been used to focus on relevant parts of an image during caption generation, showcasing the ability to handle details and global dependencies effectively. Therefore, utilizing attention in both domains can enhance the performance of deep learning models significantly.",
+        "gold_answer_marketing": "Yes, attention mechanisms in deep learning models can be applied to both machine translation and computer vision.",
+        "research": {
+            "generated_answer": "yes, attention mechanisms have been successfully applied to both machine translation and computer vision tasks. They enable models to capture dependencies between sequences regardless of the intervening distance. The concept was initially introduced in machine translation (Bahdanau et al., 2015), later extended to computer vision (Xu et al., 2015), and further developed into various types such as content-based attention (Graves, 2014), additive attention (Bahdanau et al., 2015), location-base attention (Luong et al., 2015), and general attention (Luong et al., 2015).",
+            "avg_chunk_score": 0.628179295147894,
+            "pairwise_score": 4,
+            "context_relevance_score": 4,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 4.0
+        },
+        "marketing": {
+            "generated_answer": "Absolutely, yes! Attention mechanisms have proven to be effective in enhancing the performance of deep learning models across various applications. They were initially introduced in the context of machine translation, allowing models to effectively capture dependencies between source and target sequences regardless of their order. Later, they were successfully adapted to computer vision tasks, expanding their utility further in fields like image recognition and processing.",
+            "avg_chunk_score": 0.628179295147894,
+            "pairwise_score": -1,
+            "context_relevance_score": 4,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.333333333333333
+        }
+    },
+    "17": {
+        "question": "What is Constitutional AI and how does it affect the functionality of AI systems?",
+        "gold_answer_research": "Constitutional AI is an approach developed by Anthropic for training AI systems, particularly language models like Claude, to be harmless and helpful without relying on extensive human feedback. It involves two phases: supervised learning, where the model generates responses to prompts and self-critiques based on a set of guiding principles, and reinforcement learning, where the model is trained with AI-generated feedback according to constitutional principles. This approach enables the training of AI assistants that are both helpful and harmless, with the ability to explain objections to harmful requests, enhancing transparency and reducing the need for human supervision.",
+        "gold_answer_marketing": "Constitutional AI is an approach developed by Anthropic for training AI systems, particularly language models like Claude, to be harmless and helpful without relying on extensive human feedback. It involves supervised learning and reinforcement learning phases to guide the model's responses based on a set of guiding principles (a 'constitution'). This approach aims to create AI systems that are both helpful and transparent in their decision-making process, reducing the need for constant human supervision.",
+        "research": {
+            "generated_answer": "I'm sorry for any confusion, but the provided context does not contain sufficient information to answer the question about \"Constitutional AI\" specifically. It mentions various aspects of artificial intelligence, its history, applications, and controversies, but it doesn't explicitly define or discuss \"Constitutional AI\" and its effects on AI functionality. If you could please clarify this term or provide additional context, I would be happy to help further.",
+            "avg_chunk_score": 0.5396619332167947,
+            "pairwise_score": 1,
+            "context_relevance_score": 2,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 2,
+            "comprehensive_score": 2.5
+        },
+        "marketing": {
+            "generated_answer": "I'm sorry for any confusion, but the context provided does not contain any information regarding \"Constitutional AI\" or how it affects the functionality of AI systems. Could you please clarify or expand upon this term before I attempt to answer further? If necessary, I can help you explore other aspects of AI's history or capabilities instead.",
+            "avg_chunk_score": 0.5396619332167947,
+            "pairwise_score": 1,
+            "context_relevance_score": 2,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 2,
+            "comprehensive_score": 2.5
+        }
+    },
+    "27": {
+        "question": "What is the relationship between Chinchilla and the Gopher language model families?",
+        "gold_answer_research": "The Chinchilla family of transformer models is essentially the same as the Gopher family, with minor modifications and different training optimizers. Chinchilla uses AdamW optimizer while Gopher uses Adam optimizer. Additionally, Chinchilla uses relative positional encoding and RMSNorm instead of absolute positional encoding and LayerNorm used by Gopher. Chinchilla has 70B parameters and outperforms Gopher on the MMLU benchmark by 7%, showcasing an improvement in performance. Both families follow similar naming conventions and were developed to investigate the scaling laws of large language models.",
+        "gold_answer_marketing": "Chinchilla is a family of transformer models developed by DeepMind, which is a further development over a previous model family named Gopher. Both model families were trained to investigate the scaling laws of large language models.",
+        "research": {
+            "generated_answer": "The Chinchilla family and the Gopher family are related transformer model lineages. Both originate from the architecture of GPT-2 but differ in specific aspects. The Gopher family utilizes RMSNorm instead of LayerNorm and employs relative positional encoding. In contrast, the Chinchilla family trains its models using AdamW instead of Adam for optimization. There are several members within each family of varying sizes, with the largest ones referred to as 'Chinchilla' and 'Gopher', respectively. The 70-billion-parameter Chinchilla model and the 280-billion-parameter Gopher model can be compared in detail in Table 4 of the reference material.",
+            "avg_chunk_score": 0.5032681925916989,
+            "pairwise_score": 4,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.5
+        },
+        "marketing": {
+            "generated_answer": "The Chinchilla family and Gopher family are related as both being transformer model families derived from GPT-2. Their main differences lie in their training methods (AdamW vs. Adam) and normalization techniques (RMSNorm vs. LayerNorm). Additionally, there are varying model sizes within each family. For instance, the Gopher family has six models ranging from 44 million to 280 billion parameters, while the Chinchilla family follows similar naming conventions.",
+            "avg_chunk_score": 0.5032681925916989,
+            "pairwise_score": 2,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        }
+    },
+    "51": {
+        "question": "Question: What are some of the challenges and innovations associated with fine-tuning large language models, and how does the approach discussed in the referenced text aim to address them?",
+        "gold_answer_research": "Some challenges associated with fine-tuning large language models include limited access to and manipulation of knowledge, lagging performance on knowledge-intensive tasks, and the need for provenance in decision-making and updating world knowledge. The approach discussed in the referenced text aims to address these challenges by utilizing Retrieval Augmented Generation (RAG), which involves retrieving relevant passages from a corpus to feed to the language model for improved performance in tasks such as question-answering and dialogue. This iterative approach focuses on improving alignment with user intent and fine-tuning models to control sentiment and improve response quality in various language tasks.",
+        "gold_answer_marketing": "The challenges with fine-tuning large language models include aligning them with user intent and controlling the quality of generated outputs. The approach discussed in the referenced text aims to address these challenges by using Retrieval Augmented Generation (RAG) to retrieve relevant passages from a corpus and feed them to the language model, improving alignment and performance.",
+        "research": {
+            "generated_answer": "The fine-tuning of large language models presents several challenges including the need for substantial computing resources, high costs, and potential issues with preserving the core properties of the base model while adapting it to specific tasks. The approach discussed in the referenced texts aims to tackle these challenges by exploring various techniques like compression methods, low-precision finetuning, and automated evaluation of attribution.\n\nFor instance, the authors of 'Decomposition enhances reasoning via self-evaluation guided decoding' propose decomposition as a method to enhance reasoning capabilities within large language models. They argue that decomposing complex tasks into simpler ones enables the model to perform well even with smaller datasets. Additionally, they introduce self-evaluation guided decoding, allowing the model to judge its own performance and adjust accordingly.\n\nMoreover, researchers like Xi Victoria Lin et al. examine the benefits of human feedback in language model training. Their work suggests that providing fine-grained human feedback leads to improved rewards for language model training.\n\nOverall, these studies contribute to advancing our understanding of fine-tuning large language models and addressing the challenges associated with it by focusing on innovative approaches and techniques.",
+            "avg_chunk_score": 0.6021844062920031,
+            "pairwise_score": 2,
+            "context_relevance_score": 2,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.0
+        },
+        "marketing": {
+            "generated_answer": "The fine-tuning of large language models presents several challenges, including the need for substantial computing resources and the potential preservation of biases and errors from the original data. The approach discussed in the referenced text aims to address these challenges in several ways. First, it explores instruction tuning on a larger scale than previously possible with academic research hardware. Second, it investigates the trade-offs between performance and precision in 4-bit QLoRA tuning, raising questions about the optimal balance between the two. By pushing the boundaries of what can be done with instruction tuning, researchers hope to improve the overall effectiveness and efficiency of large language models while mitigating the risks associated with biased or error-prone data.",
+            "avg_chunk_score": 0.6021844062920031,
+            "pairwise_score": 3,
+            "context_relevance_score": 2,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 3.5
+        }
+    },
+    "1": {
+        "question": "How does a large language model learn from text during training?",
+        "gold_answer_research": "A large language model learns from text during training by first going through an unsupervised generative 'pretraining' stage where it sets initial parameters using a language modeling objective. Then, it goes through a supervised discriminative 'fine-tuning' stage where it refines its parameters based on annotated examples or task demonstrations. This dual-stage approach allows the model to learn statistical relationships from text documents in a computationally intensive process, enabling it to achieve general-purpose language generation and natural language processing tasks.",
+        "gold_answer_marketing": "A large language model learns from text during training by first pretraining on a diverse dataset to acquire general language knowledge, and then fine-tuning on specific tasks or demonstrations to adapt its parameters for more targeted performance.",
+        "research": {
+            "generated_answer": "A large language model learns from text during training through a self-supervised and semi-supervised process. It acquires statistical relationships from vast amounts of text data by adjusting its internal parameters to maximize the likelihood of observing the input data. This allows the model to learn syntactic, semantic, and ontological patterns inherent in human language corpora. However, it also inherits inaccuracies and biases present in the data.",
+            "avg_chunk_score": 0.5546109752341557,
+            "pairwise_score": 3,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.25
+        },
+        "marketing": {
+            "generated_answer": "A large language model learns from text during training by acquiring statistical relationships through a self-supervised and semi-supervised process. It uses vast amounts of text data to understand the syntax, semantics, and ontologies inherent in human language corpora. This enables the model to perform various tasks like speech recognition, machine translation, natural language generation, and more. Large language models, particularly those based on transformer architectures, require substantial computing resources for both training and inference. However, they offer improved performance compared to earlier language models.",
+            "avg_chunk_score": 0.5546109752341557,
+            "pairwise_score": 3,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.25
+        }
+    },
+    "81": {
+        "question": "What are some common approaches to building an open-domain question answering system?",
+        "gold_answer_research": "Some common approaches to building an open-domain question answering system include using the RAG model, which minimizes the negative log-likelihood of answers, and comparing it to extractive QA paradigms that rely on non-parametric knowledge retrieval. Another approach is to incorporate question rewriting techniques to make open-domain QA more conversational. Additionally, utilizing datasets like QASPER, which contain questions requiring complex reasoning, can improve the performance of the system. References to papers by Anantha et al. and Asai et al. provide further insights into building ODQA systems.",
+        "gold_answer_marketing": "Common approaches to building an open-domain question answering system include using retrieval over a knowledge base and incorporating the retrieved content as part of the prompt. Other methods involve pretraining models on large amounts of text data and fine-tuning them for question answering tasks.",
+        "research": {
+            "generated_answer": "In the context provided, the author discusses several common approaches for building an open-domain question answering system. They include:\n\n1. **Single-Turn Question Answering**: This involves feeding a question to a model and having it output a direct response. The model may utilize a powerful pretrained language model and focus primarily on neural network-based transformer models.\n\n2. **Question Clustering and Demonstration Selection**: Here, questions are embedded and clustered using techniques like k-means. Representative questions from each cluster are then chosen for further processing.\n\n3. **Rationale Generation**: Zero-shot CoT is used to generate reasoning chains for selected questions, which can help construct few-shot prompts for running inference.\n\n4. **Retrieval**: Many open-domain question answering systems rely on retrieving information from external sources, particularly large knowledge bases. Methods for achieving effective retrieval include utilizing Google Search for document retrieval and employing ranking algorithms like TF-IDF.\n\nAdditionally, the author mentions various related works and datsets, including CRAG, DPR, and BART.",
+            "avg_chunk_score": 0.5792233427666784,
+            "pairwise_score": 2,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.0
+        },
+        "marketing": {
+            "generated_answer": "Some common approaches to building an open-domain question answering system include utilizing a powerful pretrained language model, focusing on single-turn QA rather than multiturn conversations, and mainly concentrating on QA models containing neural networks, particularly Transformer-based language models. Additionally, researchers study various techniques such as question clustering, rationale generation, and retrieval to enhance the performance of these systems.",
+            "avg_chunk_score": 0.5792233427666784,
+            "pairwise_score": 4,
+            "context_relevance_score": 5,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 4.25
+        }
+    },
+    "85": {
+        "question": "How is the TF-IDF model used in question answering retrieval systems?",
+        "gold_answer_research": "In question answering retrieval systems, the TF-IDF model is used to represent queries and documents as bag-of-word vectors with terms weighted by term frequency multiplied by inverse document frequency. This allows for efficient non-learning-based search engine operations based on the vector space model. The TF-IDF model helps in calculating the relevance of documents to queries by measuring the importance of terms in the context of the entire document collection. This classic information retrieval approach aids in retrieving relevant information to answer questions accurately and efficiently.",
+        "gold_answer_marketing": "The TF-IDF model is used in question answering retrieval systems to weight terms in queries and documents based on their importance in determining relevance.",
+        "research": {
+            "generated_answer": "The TF-IDF (Term Frequency-Inverse Document Frequency) model is widely used in question answering retrieval systems as a method for calculating the relevance score between a query and candidate documents in a collection. Here's how it operates within the context described in the provided context:\n\n1. **Calculating Term Frequencies**: Every term in both the query and the candidate document is counted and assigned a term frequency (TF). Terms in the query include unigrams and bigrams, meaning individual words and consecutive pairings of words respectively.\n\n2. **Computing Inverse Document Frequencies**: IDF represents the ratio of total documents in the collection to the number of documents containing a specific term. A higher IDF indicates rarer occurrences of a term throughout the entire collection.\n\n3. **Scoring Relevance**: Combining TF and IDF values allows us to calculate the final relevance scores for each term in both the query and the candidate document. These scores reflect the importance of each term in relation to the overall query.\n\n4. **Ranking Documents**: Based on these relevance scores, the retrieval system ranks candidate documents according to their overall similarity to the input query. The highest-ranked documents are considered the most probable candidates for providing accurate answers to the user's question.",
+            "avg_chunk_score": 0.5575288551169446,
+            "pairwise_score": -1,
+            "context_relevance_score": -1,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 5.0
+        },
+        "marketing": {
+            "generated_answer": "The TF-IDF (Term Frequency-Inverse Document Frequency) model plays a significant role in question answering retrieval systems by calculating the importance or relevance of each term in a query or a document. Here's a simplified explanation:\n\nThe TF-IDF model assigns higher weights to terms that occur frequently within a specific document but rarely throughout the entire collection. This makes the model particularly suitable for question answering systems, like DrQA and BERTserini mentioned in the context. These systems utilize TF-IDF to calculate similarities between queries and documents in their respective collections, thus helping to retrieve the most relevant documents for generating accurate answers.",
+            "avg_chunk_score": 0.5575288551169446,
+            "pairwise_score": 4,
+            "context_relevance_score": -1,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.666666666666667
+        }
+    },
+    "80": {
+        "question": "How does the performance of KTO compare to DPO in model alignment, and what are the potential implications for data usage and training efficiency?",
+        "gold_answer_research": "Based on the provided data and experiments, KTO consistently outperforms DPO in model alignment, even with restrictions such as using only one output per input. This suggests that KTO can achieve higher win rates and improve performance across various benchmarks compared to DPO. The implications of this performance difference include the ability to achieve quality generation results with significantly fewer desirable examples, potentially leading to more efficient data usage and training processes. This indicates that KTO may offer a more efficient and effective approach to model alignment compared to DPO.",
+        "gold_answer_marketing": "KTO outperforms DPO in model alignment with up to 90% fewer examples. This suggests that KTO can achieve high performance even with imbalanced data, potentially leading to more efficient training processes.",
+        "research": {
+            "generated_answer": "The context indicates that KTO (Khaneman-Tversky Optimization) performs as well or better than DPO (Deep Policy Optimization) in model alignment, even when applied to the same preference data. This improvement holds true regardless of the scale of the model. Theoretically, this phenomenon can be explained by two reasons: preference likelihood can be maximized without necessarily maximizing underlying human utility, and KTO implicitly ignores noisy and intransitive data, which is common in real-world feedback.\n\nFrom a practical standpoint, KTO yields better LLM (Language Model) generations and handles extreme data imbalances effectively. Additionally, when the pretrained model is sufficiently good, it's possible to skip supervised finetuning (SFT) and proceed directly to KTO without sacrificing generation quality. Conversely, SFT is always required for best results with DPO. It's essential to note that the choice of the best HALO (human-aware loss function) depends on the specific setting and inductive biases, and this selection should be deliberate instead of defaulting to a particular loss.",
+            "avg_chunk_score": 0.5813871800331614,
+            "pairwise_score": 3,
+            "context_relevance_score": 4,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.75
+        },
+        "marketing": {
+            "generated_answer": "Based on the context provided, KTO and DPO are human-aware losses that outperform non-human-aware losses like SLiC and CSFT in model alignment, as evidenced by their higher winrates against hard-to-beat baselines. KTO performs competitively with DPO at all scales, even surpassing it for certain models like Llama-3 8B and Qwen2.5 3B Instruct. The advantages of KTO include its ability to handle extreme data imbalances, yield better LLM generations, and potentially eliminate the need for supervised fine-tuning (SFT). These findings suggest that KTO is a promising approach for model alignment, offering improved data efficiency and handling of noisy and intransitive data.",
+            "avg_chunk_score": 0.5813871800331614,
+            "pairwise_score": 2,
+            "context_relevance_score": 4,
+            "failthfulness_score": -1,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 3.6666666666666665
+        }
+    },
+    "65": {
+        "question": "What approaches have been proposed to enhance the task performance of language models while considering the trade-offs such as runtime efficiency, robustness to irrelevant context, and attribution quality?",
+        "gold_answer_research": "Several approaches have been proposed to enhance the task performance of language models while considering trade-offs. These include using compression and selective augmentation methods to decrease the propensity of models to generate toxic or biased outputs. Adversarial setups have been suggested where labelers find worst-case behaviors of the model and add them to the dataset. Additionally, models like BART and T5 leverage bi-directional attention to achieve stronger performance on both discriminative and generative tasks. These methods aim to balance model performance with considerations such as runtime efficiency, robustness to irrelevant context, and attribution quality.",
+        "gold_answer_marketing": "Approaches proposed to enhance language model task performance include compression and selective augmentation, adversarial set-ups for labeling worst-case behaviors, retrieval-augmented models, and extending existing models to enable length extrapolation while maintaining quality.",
+        "research": {
+            "generated_answer": "Based on the context provided, several approaches have been proposed to enhance the task performance of language models while considering the trade-offs of runtime efficiency, robustness to irrelevant context, and attribution quality. These include:\n\n1. Instruction Tuning: This involves fine-tuning language models with human instructions to improve their ability to follow human commands and perform specific tasks. It has been demonstrated to lead to significant improvements in performance, particularly in areas like information retrieval (IR). However, it comes with additional computational costs.\n\n2. Holistic Evaluation: Some researchers have emphasized the importance of holistically evaluating language models across multiple dimensions. For instance, they compare the performance of various adaptation methods on different tasks and metrics like WikiSQL and MultiNLI-matched. They find that methods like LoRA exhibit better scalability and task performance.\n\n3. Direct Preference Optimization: This approach treats a language model as a reward model and optimizes it directly according to user preferences. It aims to ensure that the generated responses closely match what the user wants.\n\n4. Retrieval-Augmented Generation: Another approach is to combine the strengths of language models and retrieval systems through techniques like retrieval-augmented generation. This can help to reduce the reliance on the language model for generating responses and increase its robustness to irrelevant context.\n\n5. Compression and Selective Augmentation: Researchers propose compression techniques to reduce the size of large language models, enabling faster deployment and lower memory requirements. Additionally, they explore selective augmentation strategies to generate responses more efficiently by focusing on relevant parts of the context.\n\nOverall, these approaches aim to strike a balance between improving the task performance of language models and addressing concerns related to runtime efficiency, robustness to irrelevant context, and attribution quality.",
+            "avg_chunk_score": 0.6805936690463184,
+            "pairwise_score": -1,
+            "context_relevance_score": 2,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 3.6666666666666665
+        },
+        "marketing": {
+            "generated_answer": "Some approaches that have been proposed to enhance the task performance of language models include fine-tuning, prefix-embedding, prefix-layers, adapter networks like LoRA, and instruction-based finetuning. Each approach offers varying levels of runtime efficiency, robustness to irrelevant context, and attribution quality. For instance, LoRA, which uses lottery ticket hypothesis to prune unnecessary weights, shows better scalability and task performance compared to others in terms of resource usage. Instruction-based finetuning, however, improves model performance but might require additional computational resources due to the need for instruction design and optimization. Detailed evaluations of these approaches can be found in related works cited in the document.",
+            "avg_chunk_score": 0.6805936690463184,
+            "pairwise_score": 2,
+            "context_relevance_score": 2,
+            "failthfulness_score": 4,
+            "answer_relevance_score": 4,
+            "comprehensive_score": 3.0
+        }
+    },
+    "59": {
+        "question": "Considering the structure and content of the provided text, what guidelines should be used to evaluate the effectiveness of a summary or chatbot response in this context?",
+        "gold_answer_research": "To evaluate the effectiveness of a summary or chatbot response in this context, guidelines should include assessing the faithfulness of the answer to the retrieved context, the relevance of the answer to the question, and the focus of the retrieved context. Additionally, consider using quality metrics such as answer relevancy to rank responses based on how directly they address the question and avoid redundant or incomplete information. Lastly, take into account the performance of different tasks such as summarization, citation prediction, and passage ranking to determine the overall effectiveness of the response.",
+        "gold_answer_marketing": "Answer: Evaluate based on faithfulness, answer relevance, and context relevance.",
+        "research": {
+            "generated_answer": "Based on the context, the guidelines for evaluating the effectiveness of a summary or chatbot response include:\n\n1. Faithfulness: Ensure the summary or response accurately reflects the original text, avoiding Hallucinations that aren't significant to the overall meaning.\n2. Answer Relevance: Assess if the response addresses the user's query, ensuring completeness and containing all required information.\n3. Context Relevance: Evaluate how effectively the context is utilized within the summary or response, focusing on its applicability and significance to the topic.",
+            "avg_chunk_score": 0.5494902613624599,
+            "pairwise_score": 4,
+            "context_relevance_score": 5,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 3,
+            "comprehensive_score": 4.25
+        },
+        "marketing": {
+            "generated_answer": "Based on the context, effective summaries or chatbot responses in this situation should adhere to the following guidelines:\n\n1. Faithfulness: Ensure the summary accurately reflects the original text and maintains its core meaning.\n2. Answer Relevance: The response should directly address and is appropriate for the given question, avoiding unnecessary or redundant information.\n3. Context Relevance: Select sentences from the context that are crucial to understanding the summary or chatbot response, particularly for lengthier contexts.\n\nThese guidelines help maintain precision and accuracy while providing concise yet comprehensive answers.",
+            "avg_chunk_score": 0.5494902613624599,
+            "pairwise_score": 4,
+            "context_relevance_score": 5,
+            "failthfulness_score": 5,
+            "answer_relevance_score": 5,
+            "comprehensive_score": 4.75
+        }
+    }
+}
