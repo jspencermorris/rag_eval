@@ -1,135 +1,95 @@
-# Final Assignment Guidelines
+RAG Proof of Concept (PoC): Final Project Summary
+Overview
+This project is a standalone Proof of Concept (PoC) exploring the implementation and evaluation of a Retrieval-Augmented Generation (RAG) system using GenAI technologies. The goal was to investigate the capabilities and limitations of RAG in supporting document-based question answering, specifically targeting use cases relevant to both engineering and marketing teams at a mid-sized tech company.
 
+Key resources and constraints were provided at the outset, including:
 
-## Introduction
+A partially completed starter notebook
 
-You will complete a final assignment that represents a significant implementation and/or application of Gen AI techniques. Here’s what to expect:
+A defined business scenario and user personas
 
-- You must work on this assignment alone.  There is NO group work.
-- We will provide a notebook with some partially working systems
-- We will provide a scenario for the system and its users
-- We will provide a set of documents that you must use in the system
-- You cannot add any additional documents
-- We will provide a set of validation question/answer pairs
+A fixed set of internal documents to be used as the retrieval corpus
 
-Overall, the goals of this assignment are for you to:
+75 gold-labeled QA pairs for evaluation
 
+Strict constraints on allowed LLMs, embedding models, and documents
 
-* Implement a RAG system using LangChain and the LLMs we specify. You can extend starter architecture that we provide a bit to address some of the common failure points in RAG deployments. (See Week 9 Lecture slides page 57, or “Seven Failure Points When Engineering a Retrieval Augmented Generation System”, [https://arxiv.org/pdf/2401.05856](https://arxiv.org/pdf/2401.05856); page 3)
-* Please stay within the boundaries of LangChain, the LLMs, the embedding models, and the vector database we specify, and do not do original research. (The focus of a PoC, which this assignment aims to emulate, would be to test established approaches, not to try new ones.)
-* Be able to quantitatively evaluate the performance of your model
-* Be able to formulate metric(s) - that you choose! - as you evaluate to what degree your system replicates gold answers (labeled data) that we will provide.
-* Try out various hyper-parameters and settings to see which configuration works the best (given your chosen metric(s)). Do NOT try a grid search. (It is much more important to develop an intuition as to which parameters matter in which way.)
-* Write a comprehensive evaluation (‘the report’, see [ReportOutline.md](ReportOutline.md)), which also includes risks and limitations and a lot more. The audience of this evaluation/report are the stakeholders of the PoC, who would make the decision to go ahead with the RAG implementation or not. 
+All experimentation and results stayed within the provided infrastructure: specified LLMs (e.g., Mistral, Cohere), embedding models, and a fixed vector store.
 
+Goals
+The main goals I pursued were:
 
+Implementing a LangChain-based RAG pipeline using the approved LLMs and tools
 
-RULES:
+Iteratively improving the architecture to mitigate known RAG failure points (see arXiv:2401.05856, p.3)
 
-* You can only use the language models specified here (Mistral and Cohere) as the LLM in your chain.  You may use Llama 3.1 or 3.2 or Qwen 2 or Gemma 2 in other capacities.
-* You can only use the embedding models we specify
-* You can only use the documents we provide. And they all must be retrievable from your vector store (which we will specify)
-* IF you use less than the 75 gold answers we supply, you must justify your subset - how did you pick them? Apart from the provided specifications, some of the things you can freely experiment with include prompts, chunk sizes, LLM parameters, architecture, etc.
-* You must however provide one run on all 75 examples for your best 3 models/model configuration (along with the corresponding metrics, of course.)
+Defining custom evaluation metrics to quantitatively assess how well generated answers matched the provided gold answers
 
+Experimenting with key hyperparameters such as chunk size, model temperature, and prompt templates (avoiding grid search)
 
-As context, the overall scenario for this assignment is as follows:
+Writing a comprehensive stakeholder-facing report outlining methodology, key findings, and limitations
 
-You work at a tech company that is looking for new ways to organize their search and question answering capabilities to accelerate both engineering activity and the marketing team. The company also wants to roll out new GenAI-based products, so a lot of the questions will center around Generative AI and LLM concepts. The company has about 300 engineers and a marketing staff of 40. Product releases are done quarterly.
+All design choices prioritized reproducibility, interpretability, and practical relevance to the PoC context.
 
-Your role is to implement and conduct a (mini-)POC helping the company to evaluate RAG capabilities for the improvement of their document search (and corresponding question answering), supporting particularly the engineering and marketing organizations. You will receive a gold dataset with 'good' responses to questions from marketing and engineering teams. You need to develop a plan that helps you complete a RAG system within the constraints of the POC. Your answers must work for each of the two groups of users -- engineers and marketing managers. You will need to develop a plan to evaluate how well your RAG system performs relative to the gold data we provide. You will need to decide which metrics you want to combine to effectively measure how well your model is working.  You will need to experiment with the tunable hyperparameters of the setup (LLM, chunking, embeddings, ...) for your iterations.
+Business Scenario
+The project simulates an internal PoC conducted at a tech company with 300 engineers and 40 marketers. The company is exploring GenAI-based tools to improve its document search and Q&A workflows. My role was to prototype and evaluate a RAG-based search assistant that serves both engineers and marketers, and to assess whether such a system should be scaled to production.
 
+The reference documents included company-related literature and internal knowledge assets. I used these as the retrieval base for answering realistic questions posed by engineers and marketers.
 
-You will need to write up your findings as a 4 page report following [the outline we provide](ReportOutline.md).
+Model Constraints
+The following technical and procedural constraints were followed:
 
-(Also see instructions throughout the notebook.)
+LLMs: Only Mistral and Cohere were used as the LLM component of LangChain chains. LLaMA 3.1/3.2, Qwen 2, and Gemma 2 were permitted in auxiliary roles.
 
+Embeddings: Only the specified embedding models were used.
 
+Documents: Only the provided corpus was indexed in the vector store—no external additions.
 
-NOTES:
+Evaluation Data: I evaluated my best 3 models/configs on all 75 gold QA pairs. Subset runs (if used) were justified with a documented sampling rationale.
 
-* The Open Source Model is not trained for safety. So unsafe answers could be returned.
+Hyperparameters: Experimentation included prompt design, chunk sizing, temperature, and other tunable parameters. Grid search was deliberately avoided to foster intuition.
 
-## Cohere
+Cohere API Access
+To run experiments using Cohere’s LLMs, I created a Cohere account and generated a trial API key. The key was stored securely and accessed in the Colab notebook via COHERE_API_KEY, never printed or exposed. Trial limits (e.g., 1,000 requests/month) were carefully monitored throughout development. Refer to Cohere rate limits for more detail.
 
-If you do not already have a Cohere account, you will need to create one in order to get an API key.  You will not be able to complete the assignment without it.  Go to [cohere.com](https://dashboard.cohere.com).  Sign up for an account using your personal email address **NOT** your @berkeley.edu email account. Once you have signed up, login to your account and go to the dashboard.  Over in the left hand nav bar is an item 'API Keys.' Click on it and you will see an area on screen called Trial Keys.  You will need to create a "new trial key" for yourself. When you have that trial key, copy it and store a copy somewhere you can retrieve it (never in the open in a notebook).  You'll need to enter that key as a secret in the Google notebook associated with `COHERE_API_KEY.`  (See the ‘Secrets’ icon in the colab again, **DO NOT PRINT IT OUT IN THE NOTEBOOK!**)
+Deliverables
+The final deliverables submitted to the GitHub classroom repo include:
 
-Cohere’s Trial Key is free.  However, be aware of the constraints and use the resource wisely.  Check the [limits on use of the API](https://docs.cohere.com/docs/rate-limits).  You are responsible for staying within those limits. For example, the Trial Key permits only 1,000 API calls per month. So you need to either plan for that,  or you can pay to upgrade your key.
+final_report.pdf: Four-page PoC report (see structure below)
 
+notebook.ipynb: Fully executed notebook with code and outputs
 
-## Assignment Grading
-The final grade for this assignment consists of the following components:
+answers.json: A file with answers to all validation queries
 
-- [20%] Implementation and Architecture of Model
+Additional scripts/configs as needed
 
-- [15%] Poor Man’s Evaluation Strategy
+Report Structure
+The final report follows the provided ReportOutline.md and contains:
 
-- [20%] Experimentation
+Executive Summary – One-paragraph overview of the key findings
 
-- [03%] Three Specific Queries Test
+Introduction – High-level system and scenario description
 
-- [05%] Five Additional Questions
+Key Findings – Five insights supported by analysis and examples
 
-- [37%] POC Report
+Methodology – Technical summary of the implementation and evaluation strategy
 
+Results and Limitations – Includes results, risks, and open questions
 
-### Our Expectations of You
+Results Interpretation
+Model Implementation: My RAG system successfully addressed the provided scenario using the allowed tools. I made minor architectural adaptations to address known RAG limitations.
 
-As a student in a graduate level course, you are responsible for seeking out help when your project is stuck.  There is significant support available if you seek it out.  Do not wait for us to provide feedback on deliverables to take action.  If you're looking for a formal way to seek this help, skip down to the Milestone section.
+Evaluation Strategy: I defined metrics tailored to the gold answers, including overlap-based and semantic similarity-based metrics.
 
+Experimentation: I varied chunking, prompt structure, and retrieval settings, assessing the impact of each change using my custom metrics.
 
-### Rubric Dimensions
+Specific Queries: I closely evaluated how my best models answered three hand-picked benchmark questions.
 
-Each of the following dimensions will be considered while grading.  An assignment significantly lacking in any dimension will receive a considerably lower grade.  Each dimension is illustrated by several bullet points.
+Additional Questions: I created five domain-relevant questions to further probe system performance.
 
-Implementation and Architecture of Model (20%):
-- A clearly functioning model that is able to address the problem you are trying to solve  (which should be the one we were giving...).
+Final Report: The report clearly communicates findings, risks, and recommendations for stakeholders considering a broader deployment.
 
+Reflection
+This was a challenging but rewarding project. I gained practical experience designing a usable, evaluatable RAG pipeline, and I developed a strong intuition for the trade-offs and failure modes that arise in production-like environments. I also learned to communicate results clearly to technical and non-technical stakeholders.
 
-Poor Man’s Evaluation Strategy (15%):
-- Suitability and thoughtfulness of your approach to the problem.
-- "How will I know when my project is successful?", usually in the form of an evaluation metric.
-- suitability of the metrics are you using, and how you combine them
-
-
-Experimentation (20%):
-- How many of the possible tuning parameters did you use?
-- How meaningful were the various run comparisons?
-- How much analysis did you do to drive your experimentation?
-
-
-Three Specific Questions (03%):
-- How well do your answers score against ours?
-- More importantly, how reasonable are your assessments?
-
-
-Five Additional Questions (05%):
-- How thoughtful and incisive are your answers?
-
-
-POC Report (37%):
-- Primarily:
-  - Succinct, interesting presentation explaining the above.
-  - Is your paper well organized?
-  - Suitability of the report to guide the organization to a decision
-  - Suitability of the report to articulate the limitations and opportunities of the RAG approach
-- Table stakes:
-  - Did you run a spell check before submitting?
-  - Did you proof read it?
-
-
-
-## Final Submission
-
-This will be a final report on your POC following the [outline we provide](ReportOutline.md). Aim for 4-5 pages in length with the following sections:
-
-- **Executive Summary** (quick summary of your report)
-- **Introduction** (overall system description)
-- **Key Findings** (five key findings)
-- **Methodology** (implementation and evaluation approach)
-- **Results and Findings** (challenges and limitations)
-
-
-Please submit your PDF report, your notebook (*complete with outputs of running*), and your answers file to your classroom GitHub repository using the submit.sh script.
-
-**And remember: for many aspects there is no right or wrong answer! Most important are reasonable, clearly-thought-out approaches!**
+⚠️ Note: Open source LLMs used in this project are not fine-tuned for safety. Responses may reflect that.

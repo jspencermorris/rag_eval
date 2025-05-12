@@ -1,26 +1,35 @@
-# Assignment 5: Retrieval Augmented Generation Proof of Concept
-
-This assignment consists of one notebook:
-* [Assignment 5: Retrieval Augmented Generation](2024_Fall_267_assignment_V.ipynb), work with a variety of models to answer questions as accurately as possible.
-* [answers](answers) file where you'll put some of your answers
-* [Assignment Description](Description.md) A more detailed description of the assgnment and how it will be graded
-* [Report Guidelines](ReportOutline.md) a guide for the report you will submit
+Retrieval Augmented Generation Proof of Concept.
 
 
-You are **strongly** encouraged to read the assignment description and the entire notebook **BEFORE** you write any code.  You may also want to review all the lesson notebooks.
+Evaluation Approaches for a Persona-Tailored RAG System
 
-You must run this notebook in Google Colab as it requires, at minimum, a T-4 GPU. Please copy the notebook to your GoogleDrive and open it with Colab.  When you're done, download it as an .ipynb file to your local git repo and commit before running submit.sh. 
+Dec 2024
 
-## Submission Instructions
+Developed and assessed novel evaluation approaches and metrics for RAG systems adapted for different user personas; engineered base prompts and leveraged LLM-as-a-Judge.  Retrieval Augmented Generation Proof of Concept.
 
-As with Assignment 4, please submit by running the submit script, only with -a 5 (since this is assignment 5).
-```
-./assignment/submit.sh -u your-github-username -a 5
-```
+Virtual environment details in ./requirements.txt.
 
-Your submission **must** include your notebook with output cells, your completed answers file, and your PDF report.
+Data Acquisition done using direct download and SQL queries.  Details in ./src/data/.  
 
-It is your responsibility to check that your work has made it to your GitHub repository in the a5-submit branch.
+Datasets loaded via API.
 
-It will be tempting, if you are familiar with Git, to do something more complicated.  Try to resist.  The only step in the submission process is to run the submit.sh command.  Don't send pull requests, don't merge to master, don't git merge.  Just commit to your local repo and run the submit.sh command.  If you want to get yourself into a weird state despite this warning, please at least take the time to read and understand the contents of the submit.sh script above!
+Data preprocessing and modeling done using Jupyter Notebooks.  Details in ./notebooks/. The notebooks included are:
+    Primary Notebooks:
+        *   Image_Classification_Combined: This notebook condenses all the models and functions we built for the image classification models and operationalizes them. Our results (for image classification) are based on the models built in this notebook.
+        *   jsm_modeling_tabular.ipynb: This notebook condenses all the models and functions after the foundation for the tabular preprocessing was finished. Our results (for the tabular data) are based on the models built in this notebook.
+    Testing/Supplementary Notebooks:
+        -   aa_test_2.ipynb: Testing notebook where we tested various models, and code functionality. These models were used in the Image_Classification_Combined notebook.
+        -   CNN_test_r2.ipynb:  Testing notebook where we tested various models, and code functionality. These models were used in the Image_Classification_Combined notebook.
+        -   CNN_Test_r3.ipynb:  Testing notebook where we tested various models, and code functionality. These models were used in the Image_Classification_Combined notebook.
+        -   CNN_Test.ipynb: Testing notebook where we tested various models, and code functionality. These models were used in the Image_Classification_Combined notebook.
+        -   jsm_eda_00.ipynb: Testing notebook where we tested various models, and code functionality. These models and functions were used in the jsm_modeling_tabular notebook.
+        -   jsm_eda_01.ipynb: Testing notebook where we tested various models, and code functionality. These models and functions were used in the jsm_modeling_tabular notebook.
+        -   jsm_eda_02.ipynb: Testing notebook where we tested various models, and code functionality. These models and functions were used in the jsm_modeling_tabular notebook.
+        -   LSTM_Test_r1.ipynb: Testing notebook where we tested various models, and code functionality. These models were used in the Image_Classification_Combined notebook.
+        -   testing.ipynb: Testing notebook where we tested various models, and code functionality. These models and functions were used in the jsm_modeling_tabular notebook.
 
+Finalized tuned Models for tabular data were pickled and are available in ./models/.
+
+Key References in ./references/literature/.
+
+Interim and final reports in ./reports/.
